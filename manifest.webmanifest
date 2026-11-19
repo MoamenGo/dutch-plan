@@ -1,0 +1,31 @@
+{
+ "name": "Dutch A0 to C1 Roadmap",
+ "short_name": "Dutch Plan",
+ "description": "A free 104-week self-study plan to learn Dutch from zero to C1.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#FBF8F3",
+ "theme_color": "#1D1B17",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

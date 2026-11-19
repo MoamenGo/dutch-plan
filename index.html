@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dutch A0 to C1 Roadmap</title>
+<meta name="description" content="A free 104-week self-study plan to learn Dutch from zero to C1.">
+<meta name="theme-color" content="#1D1B17">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{--bg:#FBF8F3;--card:#fff;--line:#E6DFD3;--ink:#1D1B17;--muted:#4F4A41;--link:#8F3207}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:env(safe-area-inset-bottom)}
+header{background:var(--ink);color:#fff;padding:calc(16px + env(safe-area-inset-top)) 16px 16px}
+h1{margin:0 0 4px;font-size:22px;line-height:1.2}
+header p{margin:0;color:#D9D2C5;font-size:14px}
+main{max-width:760px;margin:0 auto;padding:16px}
+.bar{height:10px;background:#3b3832;border-radius:6px;overflow:hidden;margin:12px 0 4px}
+.bar i{display:block;height:100%;background:#F08A4B;width:0}
+.stat{font-size:13px;color:#D9D2C5}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;min-height:44px;padding:0 14px;border:1px solid var(--line);background:#fff;border-radius:22px;font:600 14px system-ui;color:var(--ink)}
+nav button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.now{background:#fff;border:2px solid #F08A4B;border-radius:14px;padding:16px;margin-bottom:16px}
+.now h2{margin:0 0 4px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--link)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 12px}
+.card.done{background:#F2F7F1;border-color:#C9DCC6}
+.card.cur{border:2px solid #F08A4B}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wk{font:600 12px system-ui;letter-spacing:.08em;text-transform:uppercase}
+.tag{font:600 11px system-ui;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);border-radius:4px;padding:3px 6px}
+.card h3{margin:6px 0 4px;font-size:18px;line-height:1.25}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.links{display:flex;gap:8px}
+.links a{flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #E0D6C6;border-radius:10px;background:#FFFCF7;color:var(--link);font:600 14px system-ui;text-decoration:none}
+.links a:active{background:#F3E9DC}
+label.chk{display:flex;align-items:center;gap:10px;min-height:44px;margin-top:8px;font-size:15px}
+label.chk input{width:24px;height:24px;accent-color:#0F6B63}
+.phase{border-left:6px solid;background:#fff;border-radius:12px;padding:14px;margin:0 0 16px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.phase h2{margin:0 0 6px;font-size:20px}
+.phase p{margin:0 0 6px;color:var(--muted)}
+.tools{display:grid;grid-template-columns:1fr;gap:10px}
+.tools a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;min-height:56px}
+.tools b{display:block;color:var(--link)}
+.tools span{color:var(--muted);font-size:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+.btn{min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:#fff;font:600 15px system-ui}
+.btn.alt{background:#fff;color:var(--ink)}
+input[type=date]{min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font:16px system-ui;background:#fff}
+.note{font-size:14px;color:var(--muted)}
+ul{padding-left:20px}
+@media(min-width:700px){.tools{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>Dutch A0 to C1</h1>
+<p>104 weeks, about 10 hours a week, free resources only</p>
+<div class="bar" role="progressbar" aria-label="Weeks completed" aria-valuemin="0" aria-valuemax="104" id="pb"><i id="pbi"></i></div>
+<div class="stat" id="stat"></div>
+</header>
+<nav id="tabs" role="tablist" aria-label="Sections"></nav>
+<main id="view"></main>
+<script>
+var DATA=[{"id":"A1","name":"Phase 1","route":"A0 to A1","span":"Weeks 1-12","color":"#0F6B63","title":"Sounds, spelling and survival Dutch","aim":"Pronunciation, 600 core words, present tense, simple questions.","check":"Pass an A1 sample test at 70%+. Below 70%? Repeat weeks 9-11 first.","weeks":[{"n":1,"t":"Sounds, alphabet, greetings","k":"Say your name, age and city aloud; record a 20-second voice note.","q":"Dutch pronunciation alphabet greetings","x":0},{"n":2,"t":"ik ben, jij bent; zijn and hebben","k":"Write 5 sentences: I am a pharmacist, I live in...","q":"zijn hebben present tense nationalities jobs","x":0},{"n":3,"t":"Regular verbs and family","k":"Describe your family in 6 sentences.","q":"regular verbs present tense family","x":0},{"n":4,"t":"De and het, plurals, objects","k":"Label 30 objects at home with Dutch sticky notes.","q":"de het plural nouns colours","x":0},{"n":5,"t":"Question words and inversion","k":"Ask and answer 10 questions out loud.","q":"question words wie wat waar","x":0},{"n":6,"t":"Time, routine, separable verbs","k":"Write a typical day in 8 sentences.","q":"time days routine separable verbs","x":0},{"n":7,"t":"Niet and geen; shopping","k":"Role-play ordering coffee and asking a price.","q":"niet geen shopping prices","x":0},{"n":8,"t":"Modal verbs and hobbies","k":"First 10-minute exchange chat; start your Mistakes deck.","q":"modal verbs kunnen willen moeten","x":0},{"n":9,"t":"Possessives and directions","k":"Explain how to get from home to work.","q":"possessive directions city transport","x":0},{"n":10,"t":"Perfect tense introduction","k":"Tell what you did yesterday in 8 sentences.","q":"perfect tense heb gewerkt ben gegaan","x":0},{"n":11,"t":"Prepositions, home, weather","k":"Describe your room and the weather; record 1 minute.","q":"prepositions in op bij om weather","x":0},{"n":12,"t":"A1 review and test","k":"Full A1 sample test; record a 3-minute self-introduction.","q":"A1 exam practice","x":1}]},{"id":"A2","name":"Phase 2","route":"A1 to A2","span":"Weeks 13-28","color":"#2457A6","title":"Everyday conversations and simple emails","aim":"1,500 words, past and future, simple emails and phone calls.","check":"Pass an A2 sample exam at 70%+ per skill; hold a 10-minute chat without English.","weeks":[{"n":13,"t":"Irregular verbs, daily life","k":"5-minute chat about your week.","q":"irregular verbs gaan komen doen","x":0},{"n":14,"t":"Perfect tense in depth","k":"Write a 100-word diary entry in the perfect tense.","q":"perfect tense participles hebben zijn","x":0},{"n":15,"t":"Simple past (imperfectum)","k":"Retell a childhood story for 1 minute.","q":"simple past was waren had kon","x":0},{"n":16,"t":"Reflexive verbs; health and pharmacy","k":"Role-play a pharmacy conversation in Dutch.","q":"reflexive verbs zich doctor pharmacy","x":0},{"n":17,"t":"Adjective endings; shopping","k":"Describe an outfit and a home in 8 sentences.","q":"adjective endings een grote tafel","x":0},{"n":18,"t":"Comparatives and superlatives","k":"Compare two cities or two foods.","q":"comparative superlative groter het grootst","x":0},{"n":19,"t":"Future with gaan and zullen","k":"Plan a holiday aloud for 2 minutes.","q":"future gaan zullen holiday","x":0},{"n":20,"t":"Conjunctions and word order","k":"Give 3 opinions using omdat.","q":"conjunctions omdat want dat als","x":0},{"n":21,"t":"A2 review week","k":"Record 3 minutes about you and your day.","q":"A2 review practice","x":1},{"n":22,"t":"Subordinate clauses; work","k":"Write a 120-word email about a job or schedule.","q":"subordinate clauses verb at the end work","x":0},{"n":23,"t":"Polite requests; phone calls","k":"Phone-call role-play, 3 minutes.","q":"polite requests zou phone calls","x":0},{"n":24,"t":"Object pronouns; relationships","k":"Write about a friend in 10 sentences.","q":"pronouns mij hem haar ons hun","x":0},{"n":25,"t":"Verb prepositions; complaints","k":"Write a short complaint email, 80 words.","q":"verbs with prepositions wachten op","x":0},{"n":26,"t":"Er, daar, hier; news","k":"Summarise one news item in 5 sentences.","q":"er daar hier usage","x":0},{"n":27,"t":"Imperative; recipes and how-to","k":"Explain a recipe or process aloud.","q":"imperative commands recipe","x":0},{"n":28,"t":"A2 test week","k":"4-minute monologue and a 150-word email.","q":"A2 inburgering exam practice","x":1}]},{"id":"B1","name":"Phase 3","route":"A2 to B1","span":"Weeks 29-52","color":"#7A3E9D","title":"Real Dutch, opinions and formal letters","aim":"3,500 words, understand the main points of real Dutch, formal writing, exam training.","check":"70%+ on a Staatsexamen NT2 Programme I practice exam; a 20-minute talk with a native speaker.","weeks":[{"n":29,"t":"Review A2; passive voice intro","k":"5-minute summary of a news item.","q":"passive voice worden participle","x":0},{"n":30,"t":"Passive in depth; rules","k":"Explain a Dutch rule in your own words, 120 words.","q":"passive voice door men het","x":0},{"n":31,"t":"Relative clauses","k":"Describe a person or place with 3 relative clauses.","q":"relative clauses die dat waar wat","x":0},{"n":32,"t":"Choosing the right tense","k":"Tell a story for 3 minutes, no notes.","q":"perfect vs imperfect narrative tense","x":0},{"n":33,"t":"Conditionals and wishes","k":"Write what you would do if... (150 words).","q":"conditionals als dan zou","x":0},{"n":34,"t":"Reported speech","k":"Report a conversation to a friend aloud.","q":"reported speech zei dat vroeg of","x":0},{"n":35,"t":"Complex word order; career","k":"Write a cover letter outline, 150 words.","q":"word order inversion adverbs work","x":0},{"n":36,"t":"B1 review week","k":"Record a 4-minute talk about your job.","q":"B1 review reading practice","x":1},{"n":37,"t":"Formal email and letters","k":"Write a formal email, 150 words.","q":"formal email u je phrases","x":0},{"n":38,"t":"Connectors and argument","k":"Write a 200-word opinion with 3 connectors.","q":"connectors hoewel ondanks daardoor","x":0},{"n":39,"t":"Prepositions; studying","k":"Describe a course or study you love, 2 minutes.","q":"fixed prepositions expressions study","x":0},{"n":40,"t":"Compound words","k":"Explain 10 compound words you learned.","q":"compound words word formation","x":0},{"n":41,"t":"Numbers, graphs, trends","k":"Describe a chart in 8 sentences.","q":"describing graphs trends numbers","x":0},{"n":42,"t":"Idioms and daily culture","k":"Use 5 idioms in a chat.","q":"Dutch idioms everyday expressions","x":0},{"n":43,"t":"Exam listening strategies","k":"Dictate 100 words from audio.","q":"Staatsexamen NT2 B1 luisteren","x":1},{"n":44,"t":"Exam reading strategies","k":"Summarise one text in 100 words.","q":"Staatsexamen NT2 B1 lezen","x":1},{"n":45,"t":"Exam writing strategies","k":"Write 2 exam-style tasks and get feedback.","q":"Staatsexamen NT2 B1 schrijven","x":1},{"n":46,"t":"Exam speaking strategies","k":"Record 4 speaking tasks; self-grade.","q":"Staatsexamen NT2 B1 spreken","x":1},{"n":47,"t":"Mock exam 1 (timed)","k":"Review all errors in Anki.","q":"Staatsexamen NT2 B1 oefenexamen","x":1},{"n":48,"t":"Fix weaknesses","k":"Speaking session on weak topics.","q":"B1 grammar review exercises","x":0},{"n":49,"t":"Dutch culture and society","k":"Explain a Dutch institution in 150 words.","q":"Dutch institutions politics history","x":0},{"n":50,"t":"Healthcare Dutch","k":"Role-play patient counselling in Dutch.","q":"bijsluiter medicijnen apotheek","x":0},{"n":51,"t":"Mock exam 2 (timed)","k":"Keep a corrections log.","q":"Staatsexamen NT2 B1 oefenexamen","x":1},{"n":52,"t":"B1 consolidation and rest","k":"Free speaking; plan the B2 phase.","q":"Dutch podcast intermediate","x":0}]},{"id":"B2","name":"Phase 4","route":"B1 to B2","span":"Weeks 53-80","color":"#B3400A","title":"News, essays and structured argument","aim":"6,000+ words, follow regular NOS news, write structured essays, argue a point.","check":"70%+ on a Staatsexamen NT2 Programme II practice exam; follow a Dutch show without subtitles.","weeks":[{"n":53,"t":"Error analysis; current affairs","k":"5-minute news summary aloud.","q":"NOS Journaal nieuws samenvatting","x":0},{"n":54,"t":"te + infinitive; om te","k":"Write 200 words with 5 om-te clauses.","q":"om te te infinitive aan het","x":0},{"n":55,"t":"Fixed phrases and culture","k":"Discuss a TV scene with your partner.","q":"Dutch series subtitles learners","x":0},{"n":56,"t":"Passive in all tenses; law","k":"Summarise a rule document, 150 words.","q":"passive impersonal constructions","x":0},{"n":57,"t":"Participles and nominalisation","k":"Explain a scientific idea in 200 words.","q":"participles adjectives nominalisation science","x":0},{"n":58,"t":"Discourse markers","k":"Write a 250-word argued essay.","q":"namelijk immers echter kortom","x":0},{"n":59,"t":"Register and spoken Dutch","k":"Pair chat with slang practice.","q":"spoken Dutch slang register","x":0},{"n":60,"t":"Review and mock week 1","k":"Retry mistakes in Anki.","q":"Staatsexamen NT2 B2 oefenexamen","x":1},{"n":61,"t":"Collocations","k":"Use 10 collocations in a text.","q":"collocations verb noun Dutch","x":0},{"n":62,"t":"Politics and government","k":"Prepare a 3-minute debate with 5 arguments.","q":"politiek regering Tweede Kamer","x":0},{"n":63,"t":"Economy and work","k":"Write a report summary, 200 words.","q":"economie arbeidsmarkt nieuws","x":0},{"n":64,"t":"Health and pharmacy at B2","k":"Explain a medicine mechanism in Dutch.","q":"geneesmiddelen werking uitleg","x":0},{"n":65,"t":"Prepositional relative clauses","k":"Describe a process precisely, 200 words.","q":"waarmee waarop relative clauses","x":0},{"n":66,"t":"Hypotheticals and ethics","k":"Give a 5-minute hypothetical monologue.","q":"hypothetical had dan zou ethics","x":0},{"n":67,"t":"Cause, effect, concession","k":"Write a balanced pro and con essay, 300 words.","q":"oorzaak gevolg concessie connectors","x":0},{"n":68,"t":"Review and mock week 2","k":"Record a speaking sample; self-feedback.","q":"Staatsexamen NT2 B2 lezen luisteren","x":1},{"n":69,"t":"Literature and culture","k":"Discuss a short story with your partner.","q":"Dutch short stories DBNL","x":0},{"n":70,"t":"Media and headlines","k":"Write a 250-word media comparison.","q":"media headlines social media nieuws","x":0},{"n":71,"t":"Environment and climate","k":"Summarise a documentary in 200 words.","q":"klimaat duurzaamheid documentaire","x":0},{"n":72,"t":"Formal writing","k":"Write a formal letter, 250 words.","q":"formele brief schrijven","x":0},{"n":73,"t":"Presentation skills","k":"Give a 5-minute presentation and record it.","q":"presentatie houden opbouw","x":0},{"n":74,"t":"Interviews and negotiation","k":"Mock interview with your partner.","q":"sollicitatiegesprek onderhandelen","x":0},{"n":75,"t":"Review and mock week 3","k":"Correct a full practice exam.","q":"Staatsexamen NT2 B2 oefenexamen","x":1},{"n":76,"t":"Exam writing in depth","k":"Write 2 tasks a day for 3 days.","q":"Staatsexamen NT2 B2 schrijven","x":1},{"n":77,"t":"Exam speaking in depth","k":"Record 4 B2 speaking tasks; self-grade.","q":"Staatsexamen NT2 B2 spreken","x":1},{"n":78,"t":"Idioms and proverbs","k":"Use 5 idioms per chat.","q":"Dutch proverbs spreekwoorden","x":0},{"n":79,"t":"Final B2 mock exam","k":"Analyse all errors.","q":"Staatsexamen NT2 B2 oefenexamen","x":1},{"n":80,"t":"B2 consolidation and rest","k":"Free speaking; plan the C1 phase.","q":"Dutch podcast advanced","x":0}]},{"id":"C1","name":"Phase 5","route":"B2 to C1","span":"Weeks 81-104","color":"#1D1B17","title":"Fluent, precise and native-speed Dutch","aim":"9,000+ words, fast native speech, precise formal and academic writing, nuance.","check":"Follow a one-hour lecture without subtitles; write 500 formal words with few errors; 30-minute discussion.","weeks":[{"n":81,"t":"Diagnose your top 20 errors","k":"Record a 10-minute talk and a 300-word essay; rewrite it.","q":"Dutch common mistakes advanced learners","x":0},{"n":82,"t":"Modal particles and tone","k":"Re-say 5 sentences in 3 tones.","q":"modale partikels toch maar nou eens even wel","x":0},{"n":83,"t":"Cohesion across paragraphs","k":"Write a 400-word structured essay.","q":"tekststructuur alinea verbindingswoorden","x":0},{"n":84,"t":"Formal and legal Dutch","k":"Draft a formal letter, 300 words.","q":"juridisch Nederlands officiële brief","x":0},{"n":85,"t":"Academic reading and writing","k":"Write a 150-word abstract.","q":"abstract schrijven wetenschappelijk","x":0},{"n":86,"t":"Rhetoric and persuasion","k":"Give a persuasive 5-minute speech.","q":"retorica overtuigen toespraak","x":0},{"n":87,"t":"C1 idioms and fixed phrases","k":"Use 8 idioms naturally in 2 chats.","q":"Nederlandse uitdrukkingen","x":0},{"n":88,"t":"Review and C1 mock 1","k":"Self-correct a timed writing sample.","q":"CNaVT proefexamen","x":1},{"n":89,"t":"Flemish, dialects, accents","k":"Chat with a Flemish partner if possible.","q":"Vlaams Nederlands verschillen","x":0},{"n":90,"t":"Literature: a short novel","k":"Write a 300-word book review.","q":"korte roman lezen DBNL","x":0},{"n":91,"t":"Film and TV analysis","k":"Discuss a film with your partner.","q":"Nederlandse film analyse","x":0},{"n":92,"t":"Healthcare and science, professional","k":"Present a pharmacy topic for 8 minutes.","q":"farmacie vakartikel nederlands","x":0},{"n":93,"t":"Business and technology Dutch","k":"Write a 400-word project proposal.","q":"zakelijk Nederlands voorstel schrijven","x":0},{"n":94,"t":"Humour and wordplay","k":"Write a short humorous text.","q":"Nederlandse humor woordspeling cabaret","x":0},{"n":95,"t":"Review and C1 mock 2","k":"Hold a 15-minute speaking mock with a partner.","q":"CNaVT proefexamen spreken","x":1},{"n":96,"t":"Argumentation and debate","k":"Debate with your partner for 15 minutes.","q":"debat argumenteren tegenargumenten","x":0},{"n":97,"t":"Editing your writing","k":"Rewrite 2 earlier essays.","q":"schrijftips herschrijven stijl","x":0},{"n":98,"t":"History of the Low Countries","k":"Write an 8-minute talk script.","q":"geschiedenis Nederland Vlaanderen documentaire","x":0},{"n":99,"t":"Summarising long texts","k":"Write a 250-word summary and speak a 3-minute one.","q":"samenvatten parafraseren","x":0},{"n":100,"t":"Review and C1 mock 3","k":"Analyse the errors in a full practice set.","q":"CNaVT proefexamen lezen luisteren","x":1},{"n":101,"t":"Professional communication","k":"Run a 15-minute mock meeting in Dutch.","q":"vergadering presenteren zakelijk","x":0},{"n":102,"t":"Personal projects in Dutch","k":"Publish or share a 500-word piece.","q":"Nederlandse blog schrijven","x":0},{"n":103,"t":"Final C1 test","k":"Record a 15-minute speaking sample.","q":"CNaVT proefexamen","x":1},{"n":104,"t":"Celebrate and plan maintenance","k":"Set the next challenge: daily news, weekly chat, monthly book.","q":"Nederlandse podcast boeken aanbevelingen","x":0}]}];
+var TOTAL=104;
+var KEY="nl-roadmap-v1";
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&s.done)return s}catch(e){}return{start:null,done:{}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+var S=load();
+function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function curWeek(){if(!S.start)return 0;var a=new Date(S.start+"T00:00:00"),b=new Date();b.setHours(0,0,0,0);var w=Math.floor((b-a)/604800000)+1;return Math.max(1,Math.min(TOTAL,w))}
+function g(q){return"https://www.google.com/search?q="+encodeURIComponent(q)}
+function links(p,w){
+ var l=p.id,pr,wa,th;
+ if(w.x){
+  if(l==="A1"||l==="A2")pr=["Exam",g("inburgeringsexamen "+l+" oefenexamen DUO")];
+  else if(l==="B1"||l==="B2")pr=["Exam","https://www.nt2.nl/nt2oefening"];
+  else pr=["Exam",g("CNaVT sample test advanced")];
+ }else if(l!=="C1")pr=["Practice",g("NT2 Taalmenu "+l+" "+w.q)];
+ else pr=["Practice",g(w.q+" oefenen")];
+ if(l==="A1"||l==="A2"||l==="B1"){
+  wa="https://www.youtube.com/results?search_query="+encodeURIComponent("Easy Dutch "+w.q);
+  th=["Grammar",g("site:dutchgrammar.com "+w.q)];
+ }else{
+  wa="https://www.youtube.com/results?search_query="+encodeURIComponent(w.q+" Nederlands");
+  th=["Read","https://nl.wikipedia.org/w/index.php?search="+encodeURIComponent(w.q)];
+ }
+ return[pr,["Watch",wa],th];
+}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function weekCard(p,w,cur){
+ var d=!!S.done[w.n],ls=links(p,w).map(function(x){return'<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+x[0]+'</a>'}).join("");
+ return'<article class="card'+(d?" done":"")+(cur===w.n?" cur":"")+'" id="w'+w.n+'"><div class="top"><span class="wk" style="color:'+p.color+'">Week '+w.n+(cur===w.n?" · this week":"")+'</span>'+(w.x?'<span class="tag">Test or exam</span>':"")+'</div><h3>'+esc(w.t)+'</h3><p>'+esc(w.k)+'</p><div class="links">'+ls+'</div><label class="chk"><input type="checkbox" data-w="'+w.n+'"'+(d?" checked":"")+'> Done</label></article>';
+}
+function findWeek(n){for(var i=0;i<DATA.length;i++)for(var j=0;j<DATA[i].weeks.length;j++)if(DATA[i].weeks[j].n===n)return[DATA[i],DATA[i].weeks[j]];return null}
+var tab="home";
+function counts(){var c=0;for(var k in S.done)if(S.done[k])c++;return c}
+function top(){var c=counts();document.getElementById("pbi").style.width=(c/TOTAL*100)+"%";document.getElementById("pb").setAttribute("aria-valuenow",c);var cw=curWeek();document.getElementById("stat").textContent=c+" of "+TOTAL+" weeks done"+(cw?" · now in week "+cw:"")}
+function tabs(){
+ var items=[["home","Home"]].concat(DATA.map(function(p){return[p.id,p.id]})).concat([["tools","Toolkit"],["how","How to"]]);
+ document.getElementById("tabs").innerHTML=items.map(function(t){return'<button role="tab" aria-selected="'+(tab===t[0])+'" data-t="'+t[0]+'">'+t[1]+'</button>'}).join("");
+}
+var TOOLS=[["NT2 Taalmenu","Free structured lessons, A1 to B2 (search)",g("NT2 Taalmenu")],["Oefenen.nl","Free lessons and exercises","https://www.oefenen.nl"],["dutchgrammar.com","Rules, word lists, tables","https://www.dutchgrammar.com"],["Easy Dutch","Street interviews with subtitles (YouTube)","https://www.youtube.com/results?search_query=Easy+Dutch"],["NOS Journaal in Makkelijke Taal","Slow news on weekdays (search)",g("NOS Journaal in Makkelijke Taal NPO Start")],["NOS Jeugdjournaal","Simple, faster news (search)",g("NOS Jeugdjournaal")],["Anki","Free flashcards with spaced repetition","https://apps.ankiweb.net"],["Forvo","Native pronunciation of any word","https://forvo.com"],["Woordenlijst","Official Dutch spelling","https://woordenlijst.org"],["Wiktionary (Dutch)","Dictionary and verb tables","https://nl.wiktionary.org"],["Tandem","Free language exchange","https://tandem.net"],["HelloTalk","Free language exchange","https://www.hellotalk.com"],["DBNL","Free Dutch literature, from B2","https://www.dbnl.org"],["NT2 Oefening","B1 and B2 practice exams","https://www.nt2.nl/nt2oefening"],["DUO exam samples","A2 and state exam samples (search)",g("DUO oefenexamen inburgering Staatsexamen NT2")],["CNaVT samples","C1 benchmark (search)",g("CNaVT sample test advanced")]];
+function render(){
+ top();tabs();var v=document.getElementById("view"),h="",cw=curWeek();
+ if(tab==="home"){
+  if(!S.start){
+   h+='<div class="now"><h2>Start your plan</h2><p>Pick the day you begin week 1. The app then shows your current week.</p><div class="row"><input type="date" id="sd" value="'+iso(new Date())+'" aria-label="Start date"><button class="btn" id="go">Start</button></div></div>';
+  }else{
+   var f=findWeek(cw);
+   h+='<div class="now"><h2>This week</h2>'+weekCard(f[0],f[1],cw)+'<div class="row"><button class="btn alt" id="chg">Change start date</button></div></div>';
+  }
+  h+=DATA.map(function(p){return'<section class="phase" style="border-left-color:'+p.color+'"><h2>'+p.id+" · "+p.route+'</h2><p><b>'+p.span+'</b> · '+esc(p.title)+'</p><p>'+esc(p.aim)+'</p><p class="note">Checkpoint: '+esc(p.check)+'</p><button class="btn alt" data-t="'+p.id+'">Open '+p.id+' weeks</button></section>'}).join("");
+ }else if(tab==="tools"){
+  h+='<div class="tools">'+TOOLS.map(function(t){return'<a href="'+esc(t[2])+'" target="_blank" rel="noopener"><b>'+esc(t[0])+'</b><span>'+esc(t[1])+'</span></a>'}).join("")+'</div><p class="note">Links marked search open a search on that topic, so they keep working if a site moves.</p>';
+ }else if(tab==="how"){
+  h+='<div class="card"><h3>Weekly rhythm</h3><ul><li>Mon, Tue, Thu, Fri: about 1.5 hours, one input session and one output session.</li><li>Wednesday: 30 minutes of flashcards only.</li><li>Saturday and Sunday: about 1.5 hours, long listening or reading, weekly review and speaking.</li></ul><h3>Daily formula (about 90 minutes)</h3><ul><li>15 min Anki review</li><li>30 min lesson or grammar</li><li>20 min listening</li><li>15 min speaking or writing</li><li>10 min: 5 new sentences, add the best to Anki</li></ul><h3>Three rules</h3><ul><li>Input first: about 60% listening and reading until B1.</li><li>Learn words inside sentences, never alone.</li><li>Speak from week 1 and book an exchange partner by week 8.</li></ul><h3>If you fall behind</h3><ul><li>Missed a few days: resume the current week, do not catch up.</li><li>Missed 2+ weeks: repeat the last full week, then continue.</li></ul></div><div class="card"><h3>Your data</h3><p>Progress is saved only on this device. It works offline once installed.</p><button class="btn alt" id="rst">Reset progress</button></div>';
+ }else{
+  var p=DATA.filter(function(x){return x.id===tab})[0];
+  h+='<section class="phase" style="border-left-color:'+p.color+'"><h2>'+p.id+" · "+p.route+'</h2><p><b>'+p.span+'</b> · '+esc(p.title)+'</p><p class="note">Checkpoint: '+esc(p.check)+'</p></section>'+p.weeks.map(function(w){return weekCard(p,w,cw)}).join("");
+ }
+ v.innerHTML=h;
+}
+document.addEventListener("click",function(e){
+ var t=e.target.closest("[data-t]");
+ if(t){tab=t.getAttribute("data-t");render();window.scrollTo(0,0);
+  if(DATA.some(function(p){return p.id===tab})){var cw=curWeek();var el=cw&&document.getElementById("w"+cw);if(el)el.scrollIntoView({block:"center"})}return}
+ if(e.target.id==="go"){var s=document.getElementById("sd").value;if(s){S.start=s;save();render()}}
+ if(e.target.id==="chg"){S.start=null;save();render()}
+ if(e.target.id==="rst"){if(confirm("Reset all progress on this device?")){S={start:null,done:{}};save();render()}}
+});
+document.addEventListener("change",function(e){
+ var n=e.target.getAttribute&&e.target.getAttribute("data-w");
+ if(n){S.done[n]=e.target.checked;save();var c=e.target.closest(".card");if(c)c.classList.toggle("done",e.target.checked);top()}
+});
+render();
+if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+</script>
+</body>
+</html>
