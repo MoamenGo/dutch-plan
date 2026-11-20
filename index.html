@@ -100,14 +100,14 @@ function weekCard(p,w,cur){
 function findWeek(n){for(var i=0;i<DATA.length;i++)for(var j=0;j<DATA[i].weeks.length;j++)if(DATA[i].weeks[j].n===n)return[DATA[i],DATA[i].weeks[j]];return null}
 var tab="home";
 function counts(){var c=0;for(var k in S.done)if(S.done[k])c++;return c}
-function top(){var c=counts();document.getElementById("pbi").style.width=(c/TOTAL*100)+"%";document.getElementById("pb").setAttribute("aria-valuenow",c);var cw=curWeek();document.getElementById("stat").textContent=c+" of "+TOTAL+" weeks done"+(cw?" · now in week "+cw:"")}
+function refreshTop(){var c=counts();document.getElementById("pbi").style.width=(c/TOTAL*100)+"%";document.getElementById("pb").setAttribute("aria-valuenow",c);var cw=curWeek();document.getElementById("stat").textContent=c+" of "+TOTAL+" weeks done"+(cw?" · now in week "+cw:"")}
 function tabs(){
  var items=[["home","Home"]].concat(DATA.map(function(p){return[p.id,p.id]})).concat([["tools","Toolkit"],["how","How to"]]);
  document.getElementById("tabs").innerHTML=items.map(function(t){return'<button role="tab" aria-selected="'+(tab===t[0])+'" data-t="'+t[0]+'">'+t[1]+'</button>'}).join("");
 }
 var TOOLS=[["NT2 Taalmenu","Free structured lessons, A1 to B2 (search)",g("NT2 Taalmenu")],["Oefenen.nl","Free lessons and exercises","https://www.oefenen.nl"],["dutchgrammar.com","Rules, word lists, tables","https://www.dutchgrammar.com"],["Easy Dutch","Street interviews with subtitles (YouTube)","https://www.youtube.com/results?search_query=Easy+Dutch"],["NOS Journaal in Makkelijke Taal","Slow news on weekdays (search)",g("NOS Journaal in Makkelijke Taal NPO Start")],["NOS Jeugdjournaal","Simple, faster news (search)",g("NOS Jeugdjournaal")],["Anki","Free flashcards with spaced repetition","https://apps.ankiweb.net"],["Forvo","Native pronunciation of any word","https://forvo.com"],["Woordenlijst","Official Dutch spelling","https://woordenlijst.org"],["Wiktionary (Dutch)","Dictionary and verb tables","https://nl.wiktionary.org"],["Tandem","Free language exchange","https://tandem.net"],["HelloTalk","Free language exchange","https://www.hellotalk.com"],["DBNL","Free Dutch literature, from B2","https://www.dbnl.org"],["NT2 Oefening","B1 and B2 practice exams","https://www.nt2.nl/nt2oefening"],["DUO exam samples","A2 and state exam samples (search)",g("DUO oefenexamen inburgering Staatsexamen NT2")],["CNaVT samples","C1 benchmark (search)",g("CNaVT sample test advanced")]];
 function render(){
- top();tabs();var v=document.getElementById("view"),h="",cw=curWeek();
+ refreshTop();tabs();var v=document.getElementById("view"),h="",cw=curWeek();
  if(tab==="home"){
   if(!S.start){
    h+='<div class="now"><h2>Start your plan</h2><p>Pick the day you begin week 1. The app then shows your current week.</p><div class="row"><input type="date" id="sd" value="'+iso(new Date())+'" aria-label="Start date"><button class="btn" id="go">Start</button></div></div>';
@@ -136,7 +136,7 @@ document.addEventListener("click",function(e){
 });
 document.addEventListener("change",function(e){
  var n=e.target.getAttribute&&e.target.getAttribute("data-w");
- if(n){S.done[n]=e.target.checked;save();var c=e.target.closest(".card");if(c)c.classList.toggle("done",e.target.checked);top()}
+ if(n){S.done[n]=e.target.checked;save();var c=e.target.closest(".card");if(c)c.classList.toggle("done",e.target.checked);refreshTop()}
 });
 render();
 if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
